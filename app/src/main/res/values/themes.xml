@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.FinancialStoryBuilder" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/design_default_color_primary</item>
+        <item name="colorPrimaryVariant">@color/design_default_color_primary_variant</item>
+        <item name="colorSecondary">@color/design_default_color_secondary</item>
+        <item name="colorSecondaryVariant">@color/design_default_color_secondary_variant</item>
+        <item name="colorError">@color/design_default_color_error</item>
+        <item name="colorSurface">@android:color/white</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="colorOnBackground">@android:color/black</item>
+        <item name="colorOnSurface">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <color name="design_default_color_primary">#FFD700</color>
+    <color name="design_default_color_primary_variant">#FFC107</color>
+    <color name="design_default_color_secondary">#FFEB3B</color>
+    <color name="design_default_color_secondary_variant">#FDD835</color>
+    <color name="design_default_color_error">#D32F2F</color>
+</resources>

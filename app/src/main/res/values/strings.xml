@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Financial Story Builder</string>
+    <string name="input_screen_title">Financial Story Builder</string>
+    <string name="input_screen_subtitle">Understand Your Financial Needs</string>
+    <string name="age_label">👤 Your Age</string>
+    <string name="age_hint">Enter your current age</string>
+    <string name="age_input_hint">e.g., 35</string>
+    <string name="income_label">💰 Annual Income</string>
+    <string name="income_hint">Enter your gross annual income</string>
+    <string name="income_input_hint">e.g., 50000</string>
+    <string name="dependents_label">👨‍👩‍👧‍👦 Number of Dependents</string>
+    <string name="dependents_hint">Include children and others who depend on your income</string>
+    <string name="dependents_input_hint">e.g., 2</string>
+    <string name="generate_button">Generate My Financial Story</string>
+    <string name="back_button">Back to Input</string>
+    <string name="result_screen_title">Your Financial Story</string>
+    <string name="result_screen_subtitle">Analysis Complete</string>
+</resources>
