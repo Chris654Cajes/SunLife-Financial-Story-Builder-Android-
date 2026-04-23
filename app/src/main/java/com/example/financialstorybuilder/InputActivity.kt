@@ -10,6 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 
 class InputActivity : AppCompatActivity() {
 
+    companion object {
+        const val EXTRA_AGE = "extra_age"
+        const val EXTRA_INCOME = "extra_income"
+        const val EXTRA_DEPENDENTS = "extra_dependents"
+    }
+
     private lateinit var viewModel: FinancialViewModel
     private lateinit var ageInput: EditText
     private lateinit var incomeInput: EditText
@@ -71,7 +77,11 @@ class InputActivity : AppCompatActivity() {
         viewModel.setUserData(ageInt, incomeDouble, dependentsInt)
         viewModel.generateFinancialStory()
 
-        val intent = Intent(this, ResultActivity::class.java)
+        val intent = Intent(this, ResultActivity::class.java).apply {
+            putExtra(EXTRA_AGE, ageInt)
+            putExtra(EXTRA_INCOME, incomeDouble)
+            putExtra(EXTRA_DEPENDENTS, dependentsInt)
+        }
         startActivity(intent)
     }
 }

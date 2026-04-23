@@ -1,6 +1,8 @@
 package com.example.financialstorybuilder
 
 import androidx.lifecycle.ViewModel
+import java.text.NumberFormat
+import java.util.Locale
 
 data class FinancialData(
     val age: Int,
@@ -14,6 +16,13 @@ data class FinancialData(
 
 class FinancialViewModel : ViewModel() {
 
+    companion object {
+        private val philippineCurrencyFormatter: NumberFormat =
+            NumberFormat.getCurrencyInstance(Locale("en", "PH"))
+
+        fun formatCurrency(amount: Double): String = philippineCurrencyFormatter.format(amount)
+    }
+
     private var age: Int = 0
     private var income: Double = 0.0
     private var dependents: Int = 0
@@ -25,7 +34,7 @@ class FinancialViewModel : ViewModel() {
     }
 
     fun generateFinancialStory() {
-        // Calculation is done when data is retrieved
+        // Calculation is done when data is retrieved.
     }
 
     fun getFinancialData(): FinancialData {
@@ -33,7 +42,7 @@ class FinancialViewModel : ViewModel() {
         val incomeReplacement = calculator.calculateIncomeReplacement()
         val educationFund = calculator.calculateEducationFund()
         val financialGap = calculator.calculateFinancialGap()
-        val scenario = generateScenario()
+        val scenario = generateScenario(financialGap, educationFund)
 
         return FinancialData(
             age = age,
@@ -46,44 +55,28 @@ class FinancialViewModel : ViewModel() {
         )
     }
 
-    private fun generateScenario(): String {
+    private fun generateScenario(financialGap: Double, educationFund: Double): String {
         val retirementAge = 65
         val yearsToRetirement = retirementAge - age
         val lifeExpectancy = 85
         val yearsInRetirement = lifeExpectancy - retirementAge
 
         return buildString {
-            appendLine("🏠 Your Financial Story\n")
-            appendLine("Scenario: What happens if something happens to you today?\n")
-            appendLine("Age: $age | Annual Income: $${"%.2f".format(income)} | Dependents: $dependents\n")
-            appendLine("📊 Analysis:")
-            appendLine("• Years until retirement: $yearsToRetirement years")
-            appendLine("• Expected retirement duration: $yearsInRetirement years")
-            appendLine("• Your family needs: $${"%.2f".format(calculateFinancialGap())} for financial security")
-            appendLine("• Education costs for $dependents dependent(s): $${"%.2f".format(calculateEducationFund())}")
-            appendLine("\n💡 Key Insight:")
-            appendLine("Your family would need $${"%.2f".format(calculateFinancialGap())} to maintain their lifestyle")
-            appendLine("if you were unable to earn income. This includes:")
-            appendLine("• ${dependents * 4} years of education funding")
-            appendLine("• Living expenses until retirement age")
-            appendLine("• Emergency reserves")
-            appendLine("\n✅ Solution:")
-            appendLine("Proper life insurance can bridge this gap and provide peace of mind.")
+            appendLine("If something happened to you today, your family's plan would need to replace your income and cover future obligations.")
+            appendLine()
+            appendLine("Age: $age")
+            appendLine("Annual income: ${formatCurrency(income)}")
+            appendLine("Dependents: $dependents")
+            appendLine()
+            appendLine("Analysis")
+            appendLine("- Years until retirement: $yearsToRetirement")
+            appendLine("- Expected retirement duration: $yearsInRetirement")
+            appendLine("- Estimated education funding: ${formatCurrency(educationFund)}")
+            appendLine("- Total protection need: ${formatCurrency(financialGap)}")
+            appendLine()
+            appendLine("Key insight")
+            appendLine("Your family may need about ${formatCurrency(financialGap)} to maintain financial stability if your income stops.")
+            appendLine("This estimate includes income replacement, education support, and emergency reserves.")
         }
-    }
-
-    private fun calculateIncomeReplacement(): Double {
-        val calculator = FinancialCalculator(age, income, dependents)
-        return calculator.calculateIncomeReplacement()
-    }
-
-    private fun calculateEducationFund(): Double {
-        val calculator = FinancialCalculator(age, income, dependents)
-        return calculator.calculateEducationFund()
-    }
-
-    private fun calculateFinancialGap(): Double {
-        val calculator = FinancialCalculator(age, income, dependents)
-        return calculator.calculateFinancialGap()
     }
 }

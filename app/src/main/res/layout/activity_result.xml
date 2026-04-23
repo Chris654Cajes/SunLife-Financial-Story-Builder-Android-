@@ -3,38 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@android:color/white"
     tools:context=".ResultActivity">
 
-    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="20dp">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
             android:text="Your Financial Story"
-            android:textSize="26sp"
-            android:textStyle="bold"
             android:textColor="@color/primary_yellow"
-            android:layout_marginBottom="6dp" />
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Analysis Complete"
-            android:textSize="13sp"
-            android:textColor="#666666" />
+            android:textColor="#666666"
+            android:textSize="13sp" />
 
     </LinearLayout>
 
-    <!-- ScrollView for all content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -45,80 +43,77 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Scenario Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
                 android:background="#F5F5F5"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="📖 Your Scenario"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:text="Your Scenario"
                     android:textColor="#333333"
-                    android:layout_marginBottom="12dp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/scenarioText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="13sp"
-                    android:textColor="#555555"
                     android:lineSpacingMultiplier="1.6"
+                    android:textColor="#555555"
+                    android:textSize="13sp"
                     tools:text="Loading scenario..." />
 
             </LinearLayout>
 
-            <!-- Financial Gap Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
                 android:background="#FFE8E8"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="💡 Financial Gap Analysis"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:text="Financial Gap Analysis"
                     android:textColor="#C62828"
-                    android:layout_marginBottom="12dp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/gapText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="13sp"
-                    android:textColor="#B71C1C"
                     android:lineSpacingMultiplier="1.5"
+                    android:textColor="#B71C1C"
+                    android:textSize="13sp"
                     android:textStyle="bold"
                     tools:text="Loading gap..." />
 
             </LinearLayout>
 
-            <!-- Chart Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="📊 Protection Comparison"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:text="Protection Comparison"
                     android:textColor="#333333"
-                    android:layout_marginBottom="12dp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -134,31 +129,30 @@
 
             </LinearLayout>
 
-            <!-- Key Insights Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
                 android:background="#E8F5E9"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="✅ Key Insights"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:text="Key Insights"
                     android:textColor="#2E7D32"
-                    android:layout_marginBottom="12dp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="• Green bar shows what insurance would provide\n• Red bar shows your current financial gap\n• Proper coverage bridges this gap\n• This protects your family's future"
-                    android:textSize="13sp"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="- Green bar shows what insurance would provide&#10;- Red bar shows your current financial gap&#10;- Proper coverage bridges this gap&#10;- This protects your family's future"
                     android:textColor="#1B5E20"
-                    android:lineSpacingMultiplier="1.5" />
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
@@ -166,16 +160,15 @@
 
     </ScrollView>
 
-    <!-- Back Button -->
     <Button
         android:id="@+id/backButton"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="Back to Input"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
         android:background="@drawable/button_secondary_background"
-        android:layout_marginTop="16dp" />
+        android:text="Back to Input"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
